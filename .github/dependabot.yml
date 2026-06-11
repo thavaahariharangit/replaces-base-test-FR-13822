@@ -1,14 +1,16 @@
 version: 2
- registries:
-   public-npm:
-     type: npm-registry
-     url: https://registry.npmjs.org
-     replaces-base: true
-     token: ${{secrets.DUMMY_NPM_TOKEN}}  # Any non-empty value (e.g., "unused")
- updates:
-   - package-ecosystem: "npm"
-     directory: "/"
-     schedule:
-       interval: weekly
-     registries:
-       - public-npm
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    versioning-strategy: "increase"
+    schedule:
+      interval: "daily"
+    registries:
+      - public-npm
+
+registries:
+  public-npm:
+    type: "npm-registry"
+    url: "https://registry.npmjs.org"
+    token: ${{ secrets.DUMMY_NPM_TOKEN }}
+    replaces-base: true
