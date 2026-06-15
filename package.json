@@ -4,6 +4,6 @@
    "description": "Test: replaces-base overriding private registry URLs in package-lock.json",
    "dependencies": {
      "lodash": "^4.17.21",
-     "axios": "^1.7.0"
+     "axios": "^1.18.0"
    }
  }
